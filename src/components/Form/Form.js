@@ -27,11 +27,16 @@ class Form extends Component {
   }
 
   render() {
+    const redColor = 'red';
+    const greenColor = 'green';
+    const blueColor = 'blue';
+    const groupName = 'colorSquare';
+
     return (
       <form className='Form'>
-        <RadioButton name='colorSquare' color='red' onClick={this.onClick('red')}/>
-        <RadioButton name='colorSquare' color='green' onClick={this.onClick('green')}/>
-        <RadioButton name='colorSquare' color='blue' onClick={this.onClick('blue')}/>
+        <RadioButton name={groupName} color={redColor} onClick={this.onClick(redColor)}/>
+        <RadioButton name={groupName} color={greenColor} onClick={this.onClick(greenColor)}/>
+        <RadioButton name={groupName} color={blueColor} onClick={this.onClick(blueColor)}/>
       </form>
     );
   }

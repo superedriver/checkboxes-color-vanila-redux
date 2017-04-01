@@ -5,7 +5,7 @@ export function todoApp(state, action) {
     case CHANGE_COLOR:
       return {
         color: action.payload,
-      }
+      };
     default:
       return state
   }

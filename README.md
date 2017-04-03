@@ -1,4 +1,4 @@
-###Try vanilla redux.
+### Try vanilla redux.
 
 #### Installation:
 ##### - Move to the project's folder. 

@@ -1,7 +1,7 @@
 import React, { PropTypes as toBe, Component } from 'react';
-import './Square.css';
+import './Circle.css';
 
-class Square extends Component {
+class Circle extends Component {
   static propTypes = {
     color: toBe.string.isRequired,
   };
@@ -12,9 +12,9 @@ class Square extends Component {
     };
 
     return (
-      <div className='Square' style={divColor} />
+      <div className='Circle' style={divColor} />
     );
   }
 }
 
-export default Square;
+export default Circle;

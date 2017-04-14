@@ -7,12 +7,15 @@ class Circle extends Component {
   };
 
   render() {
+    const { color } = this.props;
     const divColor = {
-      backgroundColor: this.props.color
+      backgroundColor: color
     };
 
     return (
-      <div className='Circle' style={divColor} />
+      <div className='Circle' style={divColor}>
+        { color ? '' : 'Color isn\'t picked'}
+      </div>
     );
   }
 }

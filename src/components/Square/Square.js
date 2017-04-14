@@ -7,12 +7,15 @@ class Square extends Component {
   };
 
   render() {
+    const { color } = this.props;
     const divColor = {
-      backgroundColor: this.props.color
+      backgroundColor: color
     };
 
     return (
-      <div className='Square' style={divColor} />
+      <div className='Square' style={divColor}>
+        { color ? '' : 'Color isn\'t picked'}
+      </div>
     );
   }
 }

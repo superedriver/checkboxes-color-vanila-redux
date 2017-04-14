@@ -3,7 +3,6 @@ import './App.css';
 import Form from '../Form/Form';
 import Square from '../Square/Square';
 import Circle from '../Circle/Circle';
-import { COLORS } from '../../constants';
 import { changeSquareColor, changeCircleColor } from '../../actions'
 import store from '../../store'
 
@@ -64,15 +63,13 @@ class App extends Component {
       <div className="App">
         <div>
           <Form
-            colors={COLORS}
-            onClick={this.onSquareFormChange}
+            onChange={this.onSquareFormChange}
           />
           <Square color={squareColor}/>
         </div>
         <div>
           <Form
-            colors={COLORS}
-            onClick={this.onCircleFormChange}
+            onChange={this.onCircleFormChange}
           />
           <Circle color={circleColor} />
         </div>

@@ -1,25 +1,22 @@
 import React, { PropTypes as toBe, Component } from 'react';
 import './Form.css';
-import RadioButton from '../RadioButton/RadioButton';
+import RadioGroup from '../RadioGroup/RadioGroup';
+import { COLORS } from '../../constants';
 
 class Form extends Component {
   static propTypes = {
-    colors: toBe.array.isRequired,
-    onClick: toBe.func.isRequired,
+    onChange: toBe.func.isRequired,
   };
 
   render() {
-    const { colors, onClick } = this.props;
+    const { onChange } = this.props;
     return (
       <form className='Form'>
-        { colors.map( color => (
-          <RadioButton
-            key={color}
-            name='changeColor'
-            color={color}
-            onClick={onClick(color)}
-          />)
-        )}
+        <RadioGroup
+          name='changeColor'
+          onChange={onChange}
+          colors={COLORS}
+        />
       </form>
     );
   }

@@ -16,30 +16,25 @@ class App extends Component {
       circleColor: state.squareColor
     };
 
-    this.onSquareFormChange = this.onSquareFormChange.bind(this);
-    this.onCircleFormChange = this.onCircleFormChange.bind(this);
+    this.onSquareFormChange = this.onFormChange.bind(this, 'squareColor');
+    this.onCircleFormChange = this.onFormChange.bind(this, 'circleColor');
   }
 
   getPreviousColor(field) {
     return store.getState()[field];
   }
 
-  onSquareFormChange(color) {
+  onFormChange(field, color) {
     return () => {
-      const previousColor = this.getPreviousColor('squareColor');
+      const previousColor = this.getPreviousColor(field);
 
       if (previousColor !== color) {
-        store.dispatch(changeSquareColor(color));
-      }
-    }
-  }
+        const actions = {
+          'squareColor': changeSquareColor,
+          'circleColor': changeCircleColor,
+        };
 
-  onCircleFormChange(color) {
-    return () => {
-      const previousColor = this.getPreviousColor('circleColor');
-
-      if (previousColor !== color) {
-        store.dispatch(changeCircleColor(color));
+        store.dispatch(actions[field](color));
       }
     }
   }
